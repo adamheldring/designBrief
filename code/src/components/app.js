@@ -1,8 +1,75 @@
 import React from "react"
+import Article from "./Article"
 
 class App extends React.Component {
 
   render() {
+
+    const articles = [
+      {
+        title: "The Boy Who Tamed the Sea",
+        content: "At 5:30 am, on any morning I can handle it, " +
+          "I'll slip out of the dark mouth of my covers " +
+          "and creep through the silver lig...",
+        articleImage: {
+          url: "medium-image-puff-1.jpeg",
+          alt: "playground"
+        },
+        datePublished: "Oct 27",
+        readingTime: 8,
+        author: {
+          name: "Carl Moore",
+          image: "writer-1.png"
+        }
+      },
+      {
+        title: "The Role of Human Emotions in the Future of Transport",
+        content: "Getting from A to B is about to feel very different",
+        articleImage: {
+          url: "medium-image-puff-2.png",
+          alt: "drawn cars on road"
+        },
+        datePublished: "Nov 1",
+        readingTime: 7,
+        author: {
+          name: "Ben Bland",
+          image: "writer-2.jpeg"
+        }
+      },
+      {
+        title: "The March of the Losers",
+        content: "Around the world, the victims are becoming " +
+          "the abusers, and Donald Trump is their king",
+        articleImage: {
+          url: "medium-image-puff-4.jpeg",
+          alt: "people gathering"
+        },
+        datePublished: "Nov 10",
+        readingTime: 8,
+        author: {
+          name: "Henry Wismayer",
+          image: "writer-3.jpeg"
+        },
+      },
+      {
+        title: "The Burning Season",
+        content: "You cannot save everything when the fires come " +
+          "to Northern California",
+        articleImage: {
+          url: "medium-image-puff-3.png",
+          alt: "man and woman reading"
+        },
+        datePublished: "Nov 9",
+        readingTime: 9,
+        author: {
+          name: "Lindsey Smith",
+          image: "writer-4.jpeg"
+        }
+      }
+    ]
+
+    console.log(articles)
+
     return (
       <div className="app">
         <header>
@@ -39,38 +106,22 @@ class App extends React.Component {
           </div>
 
           <div className="articleSection">
-            <div className="article">
-              <div className="imageContainer">
-                <img src="./images/medium-image-puff-1.jpeg" alt="playground"></img>
-              </div>
-              <div className="infoContainer">
-                <div className="articleInfo">
-                  <h3>The Boy Who Tamed the Sea</h3>
-                  <p>At 5:30 am, on any morning I can handle it,
-                    I'll slip out of the dark mouth of my covers
-                    and creep through the silver lig...
-                  </p>
-                </div>
-                  <div className="articleAuthor">
-                    <img src="./images/writer-1.png" alt="author"></img>
-                    <p><b>Carl Moore</b><br></br>Oct 27  8 min read</p>
-                    <img src="./images/bookmark.png" alt="bookmark" className="bookmark"></img>
-                  </div>
-              </div>
 
-            </div>
-            <div className="article">
-              Hello2
-            </div>
-            <div className="article">
-              Hello3
-            </div>
-            <div className="article">
-              Hello4
-            </div>
+            {articles.map((article, index) => {
+              return <Article
+                key={index}
+                title={article.title}
+                content={article.content}
+                articleImage={article.articleImage.url}
+                imageDesc={article.articleImage.alt}
+                datePublished={article.datePublished}
+                readingTime={article.readingTime}
+                authorName={article.author.name}
+                authorImage={article.author.image}
+              />})
+            }
 
           </div>
-
         </section>
       </div>
     )
