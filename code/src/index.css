@@ -11,6 +11,7 @@ h2 {
   font-family: "Lora", serif;
 }
 h1 {
+  margin-top: 0;
   font-size: 42px;
   color: #414141;
 }
@@ -50,6 +51,7 @@ p.activeMenuItem {
   align-items: center;
   height: 75px;
   margin-top: 0;
+  overflow: hidden;
 }
 .content {
   width: 1025px;
@@ -174,8 +176,92 @@ img.bookmark {
   padding-left: 10px;
 }
 
-@media (max-width: 1050px) {
+@media (min-width: 601px) and (max-width: 1050px) {
   body {
-    background: red;
+  padding: 0 20px;
+    /* background: red; */
+  }
+  h1 {
+    font-size: 28px;
+  }
+  .menuContainer {
+    width: 100%;
+  }
+  .content {
+    width: 100%;
+  }
+  .topArticle input {
+    margin-top: 20px;
+  }
+  .topInfoContainer {
+    width: 100%;
+  }
+  .topImageContainer {
+    display: none;
+  }
+  .article {
+    width: 100%;
+    flex-direction: column;
+    margin-top: 1%;
+  }
+  .imageContainer {
+    width: 100%;
+    height: 170px;
+  }
+  .imageContainer img {
+    object-fit: cover;
+    height: 100%;
+
+    /* width: 100%; */
+  }
+  .articleInfo h3 {
+    font-size: 16px;
+  }
+  .articleAuthor {
+    margin-top: 14px;
+  }
+}
+@media (max-width: 600px) {
+  body {
+    padding: 0 20px;
+  }
+  h1 {
+    font-size: 28px;
+  }
+  .menuContainer {
+    width: 100%;
+  }
+  .content {
+    padding-top: 20px;
+    width: 100%;
+  }
+  .topArticle input {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .topInfoContainer {
+    width: 100%;
+  }
+  .topImageContainer {
+    display: none;
+  }
+  .article {
+    width: 100%;
+    flex-direction: column;
+    margin-top: 1%;
+  }
+  .imageContainer {
+    width: 100%;
+    height: 170px;
+  }
+  .imageContainer img {
+    object-fit: cover;
+    height: 100%;
+  }
+  .articleInfo h3 {
+    font-size: 16px;
+  }
+  .articleAuthor {
+    margin-top: 5px;
   }
 }

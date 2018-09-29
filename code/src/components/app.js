@@ -94,7 +94,7 @@ class App extends React.Component {
           <div className="topArticle">
 
             <div className="topInfoContainer">
-              <h1>Interesting ideas that set your mind in motion</h1>
+              <h1>Interesting ideas that set your mind in motion.</h1>
               <p>Hear directly from the people who know it best. From tech to politics
               to creativity and more – whatever your interestsm, we&apos;ve got you covered</p>
               <input type="button" value="Get started" className="button black"/><input type="button" value="Learn more" className="button white"/>
