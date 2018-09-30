@@ -32,9 +32,13 @@ nav {
   justify-content: space-between;
   width: 85%;
 }
+nav.reverse {
+  justify-content: flex-end;
+}
 nav p {
   color: #777777;
   font-size: 13px;
+  padding-bottom: 1px;
 }
 p.activeMenuItem {
   font-weight: bold;
@@ -52,6 +56,18 @@ p.activeMenuItem {
   height: 75px;
   margin-top: 0;
   overflow: hidden;
+}
+.menuContainer p {
+  vertical-align: middle;
+}
+img.menuArrows {
+  display: none;
+  height: 13px;
+  margin-right: 10px;
+  opacity: 0.2;
+}
+img.menuArrows.blackArrow {
+  opacity: 1;
 }
 .content {
   width: 1025px;
@@ -94,6 +110,7 @@ p.activeMenuItem {
 .button.green {
   background: #00a87c;
   border: 1px solid #00a87c;
+  min-width: 95px;
 }
 .button.black {
   background: #000;
@@ -101,7 +118,6 @@ p.activeMenuItem {
 }
 .button.white {
   background: #fff;
-
   color: black;
 }
 .articleSection {
@@ -109,7 +125,6 @@ p.activeMenuItem {
   flex-flow: row wrap;
   justify-content: space-between;
   margin-top: 2%;
-
 }
 .article {
   display: flex;
@@ -134,7 +149,6 @@ p.activeMenuItem {
   flex-grow: 1;
   flex-direction: column;
   justify-content: space-between;
-
 }
 .articleInfo h3 {
   margin: 0;
@@ -176,13 +190,28 @@ img.bookmark {
   padding-left: 10px;
 }
 
+/* Tablet */
 @media (min-width: 601px) and (max-width: 1050px) {
   body {
   padding: 0 20px;
-    /* background: red; */
   }
   h1 {
     font-size: 28px;
+  }
+  nav {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    width: 870px;
+    margin-right: 20px;
+    overflow: hidden;
+  }
+  nav p {
+    padding-right: 20px;
+    white-space: nowrap;
+  }
+  img.menuArrows {
+    display: inline;
   }
   .menuContainer {
     width: 100%;
@@ -211,8 +240,6 @@ img.bookmark {
   .imageContainer img {
     object-fit: cover;
     height: 100%;
-
-    /* width: 100%; */
   }
   .articleInfo h3 {
     font-size: 16px;
@@ -221,6 +248,8 @@ img.bookmark {
     margin-top: 14px;
   }
 }
+
+/* Mobile */
 @media (max-width: 600px) {
   body {
     padding: 0 20px;
@@ -228,8 +257,23 @@ img.bookmark {
   h1 {
     font-size: 28px;
   }
+  nav {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    width: 870px;
+    margin-right: 20px;
+    overflow: hidden;
+  }
+  nav p {
+    padding-right: 20px;
+    white-space: nowrap;
+  }
   .menuContainer {
     width: 100%;
+  }
+  img.menuArrows {
+    display: inline;
   }
   .content {
     padding-top: 20px;

@@ -5,6 +5,24 @@ class App extends React.Component {
 
   render() {
 
+    // Clickable arrows lets the user see entire menu in tablet and mobile view
+    const toggleMenu = () => {
+      document.getElementById('arrowLeft').classList.toggle('blackArrow')
+      document.getElementById('arrowRight').classList.toggle('blackArrow')
+      document.getElementById('menu').classList.toggle('reverse')
+    }
+
+    // Automaticly removes reverse menu order if user resizes from tablet back to desktop
+    const checkScreen = () => {
+      if (window.innerWidth > 1050) {
+        document.getElementById('menu').className = 'menu'
+      }
+    }
+
+    // Listens for resize event in case menu needs to be changed back to desktop view
+    window.addEventListener('resize', checkScreen)
+
+    // Initializes article array for use with the Article component
     const articles = [
       {
         title: "The Boy Who Tamed the Sea",
@@ -68,13 +86,12 @@ class App extends React.Component {
       }
     ]
 
-    console.log(articles)
-
     return (
       <div className="app">
         <header>
           <div className="menuContainer">
-            <nav className="menu">
+            <img src="./images/arrow-left.png" className="menuArrows" id="arrowLeft" alt="expand menu arrow" onClick={toggleMenu}></img>
+            <nav className="menu" id="menu">
               <p className="activeMenuItem">Home</p>
               <p>Technology</p>
               <p>Creativity</p>
@@ -86,6 +103,7 @@ class App extends React.Component {
               <p>Politics</p>
               <p>More</p>
             </nav>
+          <img src="./images/arrow-right.png" className="menuArrows blackArrow" id="arrowRight" alt="expand menu arrow" onClick={toggleMenu}></img>
           <input type="button" value="Get started" className="button green"/>
           </div>
         </header>
@@ -123,10 +141,10 @@ class App extends React.Component {
 
           </div>
         </section>
+
       </div>
     )
   }
-
 }
 
 export default App
